@@ -19,6 +19,7 @@
         <version>3.0.0-M20</version>
     </parent>
     <artifactId>assembly-sdk</artifactId>
+    <version>${parent.version}-WSO2</version>
     <packaging>pom</packaging>
     <name>Codenvy SDK :: Assemblies Tomcat</name>
     <dependencies>
@@ -134,19 +135,19 @@
         <dependency>
             <groupId>com.codenvy.sdk</groupId>
             <artifactId>assembly-ide</artifactId>
-            <version>${project.version}</version>
+            <version>${parent.version}</version>
             <type>war</type>
         </dependency>
         <dependency>
             <groupId>com.codenvy.sdk</groupId>
             <artifactId>assembly-platform-api</artifactId>
-            <version>${project.version}</version>
+            <version>${parent.version}-WSO2</version>
             <type>war</type>
         </dependency>
         <dependency>
             <groupId>com.codenvy.sdk</groupId>
             <artifactId>assemby-java-codeassistant</artifactId>
-            <version>${project.version}</version>
+            <version>${parent.version}</version>
             <type>war</type>
         </dependency>
         <dependency>
@@ -455,7 +456,7 @@
                                 <copy overwrite="true" todir="${project.build.directory}/tomcat-ide/sdk-resources">
                                     <fileset dir="${project.build.directory}/../../assembly-ide" includes="src/**, pom.xml" />
                                 </copy>
-                                <unwar dest="${project.build.directory}/packager-conf/war/ide" src="${project.build.directory}/packager-conf/war/assembly-ide-${project.version}.war" />
+                                <unwar dest="${project.build.directory}/packager-conf/war/ide" src="${project.build.directory}/packager-conf/war/assembly-ide-${parent.version}.war" />
                                 <move todir="${project.build.directory}/packager-conf/war/ide/_app">
                                     <fileset dir="${project.build.directory}/packager-conf/war/ide/_app/" />
                                 </move>
@@ -467,7 +468,7 @@
                                 </war>
                                 <copy file="${project.build.directory}/packager-conf/war/assembly-platform-api-${project.version}.war" overwrite="true" tofile="${project.build.directory}/tomcat-ide/webapps/api.war" />
                                 <copy file="${project.build.directory}/packager-conf/war/codenvy-ext-datasource-server-war-sdk-${codenvy.plugin.datasource.version}.war" overwrite="true" tofile="${project.build.directory}/tomcat-ide/webapps/datasource.war" />
-                                <copy file="${project.build.directory}/packager-conf/war/assemby-java-codeassistant-${project.version}.war" overwrite="true" tofile="${project.build.directory}/tomcat-ide/webapps/java-ca.war" />
+                                <copy file="${project.build.directory}/packager-conf/war/assemby-java-codeassistant-${parent.version}.war" overwrite="true" tofile="${project.build.directory}/tomcat-ide/webapps/java-ca.war" />
                                 <chmod dir="${project.build.directory}/tomcat-ide" includes="*.sh" perm="+x" />
                             </target>
                         </configuration>

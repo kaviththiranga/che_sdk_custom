@@ -19,6 +19,7 @@
         <version>3.0.0-M20</version>
     </parent>
     <artifactId>assembly-platform-api</artifactId>
+    <version>${parent.version}-WSO2</version>
     <packaging>war</packaging>
     <name>Codenvy SDK :: Platform API</name>
     <dependencies>
@@ -98,7 +99,7 @@
         <dependency>
             <groupId>com.codenvy.ide</groupId>
             <artifactId>codenvy-ide-vfs-fs</artifactId>
-            <version>${codenvy.ide.version}</version>
+            <version>${codenvy.ide.version}-WSO2</version>
         </dependency>
         <dependency>
             <groupId>com.codenvy.ide</groupId>
