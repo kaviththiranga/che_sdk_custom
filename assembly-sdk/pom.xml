@@ -135,7 +135,7 @@
         <dependency>
             <groupId>com.codenvy.sdk</groupId>
             <artifactId>assembly-ide</artifactId>
-            <version>${parent.version}</version>
+            <version>${parent.version}-WSO2</version>
             <type>war</type>
         </dependency>
         <dependency>
@@ -456,7 +456,7 @@
                                 <copy overwrite="true" todir="${project.build.directory}/tomcat-ide/sdk-resources">
                                     <fileset dir="${project.build.directory}/../../assembly-ide" includes="src/**, pom.xml" />
                                 </copy>
-                                <unwar dest="${project.build.directory}/packager-conf/war/ide" src="${project.build.directory}/packager-conf/war/assembly-ide-${parent.version}.war" />
+                                <unwar dest="${project.build.directory}/packager-conf/war/ide" src="${project.build.directory}/packager-conf/war/assembly-ide-${parent.version}-WSO2.war" />
                                 <move todir="${project.build.directory}/packager-conf/war/ide/_app">
                                     <fileset dir="${project.build.directory}/packager-conf/war/ide/_app/" />
                                 </move>
