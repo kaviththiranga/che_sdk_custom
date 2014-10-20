@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.codenvy.ide</groupId>
             <artifactId>codenvy-ext-java-codeassistant</artifactId>
-            <version>${codenvy.ide.version}</version>
+            <version>${codenvy.ide.version}-WSO2</version>
             <type>jar</type>
         </dependency>
         <dependency>
